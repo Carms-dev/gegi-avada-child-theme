@@ -28,17 +28,25 @@ Text Domain:  Avada
   color: #fff;
 }
 
+.sb-wrapper .btn {
+  color: white;
+  background: #32808d;
+  border-radius: 3px;
+  padding: 10px 30px;
+  font-size: bold;
+}
+
 .container-img {
   display: grid;
   grid-gap: 5vmin;
   align-items: center;
-  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
-.container-text-icon {
+.grid-twos-flex {
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-gap: 20px;
+  grid-gap: 12px;
 }
 
 .section-header {
@@ -67,7 +75,7 @@ Text Domain:  Avada
 }
 
 .card-leaf:hover {
-  scale: 1.05;
+  transform: scale(1.05);
 }
 
 .card-leaf p {
