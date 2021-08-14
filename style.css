@@ -9,7 +9,6 @@ Text Domain:  Avada
 */
 
 /* School Board Page */
-
 .sb-wrapper section {
   padding-top: 20px;
   padding-bottom: 100px;
@@ -34,6 +33,8 @@ Text Domain:  Avada
   border-radius: 3px;
   padding: 10px 30px;
   font-size: bold;
+  display: inline-block;
+  margin: 20px 0;
 }
 
 .container-img {
@@ -93,11 +94,35 @@ Text Domain:  Avada
   align-items: flex-start;
 }
 
+.sb-nav {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  grid-gap: 5vmin;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sb-nav p {
+  display: none;
+}
+
+.sb-nav>div {
+  padding: 20px;
+}
+
 @media (min-width: 768px) {
   .container-img {
     grid-template-columns: 2fr 3fr;
   }
   .grid-twos {
     grid-template-columns: 1fr 1fr;
+  }
+  .sb-nav p {
+    display: block;
   }
 }
