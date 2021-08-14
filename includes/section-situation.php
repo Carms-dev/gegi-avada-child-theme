@@ -1,4 +1,4 @@
-
+<!-- Template Partials -->
 <?php if( have_rows($args['key'], $args['static_content'])): ?>
   <?php while( have_rows($args['key'], $args['static_content']) ): the_row();
     // Get sub field values.
@@ -25,28 +25,27 @@
     </div>
 
     <div class="grid-twos">
-      <?php echo $image; ?>
       <?php if( !empty( $image ) ): ?>
         <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
       <?php endif; ?>
+
+      <!-- Gegi's blurb -->
       <div class="card card-sub">
         <h3><?php echo $sub_header; ?></h3>
         <p><?php echo $sub_description; ?></p>
       </div>
 
       <!-- Policy Card -->
-      <div class="card card-leaf">
+      <div class="card">
         <h3><?php echo $policy_header; ?></h3>
         <?php if( have_rows($args['key'], $args['school_board']) ): ?>
           <?php while( have_rows($args['key'], $args['school_board']) ): the_row();
-            // Get sub field values.
             $policy_excerpt = get_sub_field('policy_excerpt');
             $policy_file = get_sub_field('policy_file');
           ?>
           <div class="grid-twos-flex">
             <p><?php echo $policy_description; ?></p>
             <?php if( $policy_file ): ?>
-              <!-- TODO: Fix URL -->
               <a href="<?php echo $policy_file['url']; ?>">
                 <?php echo $args['download_icon']; ?>
               </a>
@@ -69,7 +68,7 @@
       </div>
 
       <!-- Sheet Card -->
-      <div class="card card-leaf">
+      <div class="card">
         <h3><?php echo $sheet_header; ?></h3>
         <div class="grid-twos-flex">
           <p>

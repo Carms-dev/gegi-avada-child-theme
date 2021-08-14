@@ -10,7 +10,7 @@
 			<div class="container-img">
         <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
         <div>
-          <pre><?php echo esc_html( $args['school_board']->post_title ); ?></pre>
+          <pre><?php echo esc_html( get_the_title( $args['school_board'] ) ); ?></pre>
           <h1><?php echo esc_html( $header ); ?></h1>
           <p><?php echo esc_html( $description ); ?></p>
         </div>
