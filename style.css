@@ -9,14 +9,57 @@ Text Domain:  Avada
 */
 
 /* School Board Page */
+.sb-wrapper section {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
 
-.sb-hero>div {
+.sb-wrapper i {
+  display: grid;
+  place-content: center;
+  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: #F4A58D;
+  color: #fff;
+}
+
+.sb-wrapper .btn {
+  color: white;
+  background: #32808d;
+  border-radius: 3px;
+  padding: 10px 30px;
+  font-size: bold;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.container-img {
   display: grid;
   grid-gap: 5vmin;
   align-items: center;
+  padding-top: 40px;
 }
 
-.sb-hero>ul {
+.grid-twos-flex {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 12px;
+}
+
+.section-header {
+  padding: 40px 0;
+}
+
+.card {
+  padding: 20px 30px;
+  background: #F2F3F5;
+}
+
+.cards-anchor {
   padding: 50px 0;
   list-style: none;
   display: grid;
@@ -25,26 +68,61 @@ Text Domain:  Avada
   text-align: center;
 }
 
-.sb-hero li {
-  background: #F2F2F2;
-  padding: 20px;
-  border-radius: 30px 0;
+.card-leaf {
+  padding: 30px 20px;
+  border-radius: 50px 0;
+  transition: all 0.5s ease;
+  border: 8px solid #eee;
 }
 
-.sb-hero i {
+.card-leaf:hover {
+  transform: scale(1.05);
+}
+
+.card-leaf p {
+  color: black;
+}
+
+.card-sub {
+  padding: 20px 30px;
+  border-left: 3px solid #32808d;
+}
+
+.grid-twos {
   display: grid;
-  place-content: center;
-  font-size: 30px;
-  width: 70px;
-  height: 70px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background: #F4A58D;
-  color: #fff;
+  grid-gap: 5vmin;
+  align-items: flex-start;
 }
 
-@media (min-width: 640px) {
-  .sb-hero>div {
+.sb-nav {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  grid-gap: 5vmin;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sb-nav p {
+  display: none;
+}
+
+.sb-nav>div {
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .container-img {
     grid-template-columns: 2fr 3fr;
+  }
+  .grid-twos {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sb-nav p {
+    display: block;
   }
 }
