@@ -1,8 +1,8 @@
 <?php
-	/* Template Name: School Board */
+	/* Template Name: Policy Page */
 	get_header();
 	$school_board = get_field('school_board')->ID; // ID
-	$static_content = wp_get_post_parent_id( get_the_ID() ); // ID
+	$static_content = get_the_ID(); // ID
   if( have_rows( 'general', $static_content) ):
     while( have_rows( 'general', $static_content) ): the_row();
       $download_icon = get_sub_field( 'download_icon' );
@@ -57,6 +57,7 @@
   <!-- Step Nav Buttons -->
   <?php get_template_part( 'includes/nav', 'steps', array(
     'static_content'  => $static_content,
+    'school_board'    => $school_board,
   ) ); ?>
 
 </div>

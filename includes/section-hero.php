@@ -10,7 +10,9 @@
 			<div class="container-img">
         <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
         <div>
-          <pre><?php echo esc_html( get_the_title( $args['school_board'] ) ); ?></pre>
+          <?php if(!is_null($args['school_board'])): ?>
+            <pre><?php echo esc_html( get_the_title( $args['school_board'] ) ); ?></pre>
+          <?php endif; ?>
           <h1><?php echo esc_html( $header ); ?></h1>
           <p><?php echo esc_html( $description ); ?></p>
         </div>
@@ -18,7 +20,7 @@
 
       <!-- Anchors -->
       <?php if( have_rows('anchor_links') ): ?>
-      <div class="cards-anchor">
+      <div class="cards cards-anchor">
 
 				<?php while( have_rows('anchor_links') ): the_row();
 					// Get sub field values.

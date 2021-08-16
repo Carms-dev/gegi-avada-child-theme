@@ -44,7 +44,7 @@
           $file = get_sub_field('file');
         ?>
           <div class="card card grid-twos-flex" >
-            <h3><?php echo $file['filename']; ?></h3>
+            <p><?php echo $file['title']; ?></p>
             <?php if( $file ): ?>
               <a href="<?php echo $file['url']; ?>">
                 <?php echo $args['download_icon']; ?>
