@@ -9,9 +9,31 @@ Text Domain:  Avada
 */
 
 /* School Board Page */
+
 .sb-wrapper section {
   padding-top: 20px;
   padding-bottom: 100px;
+}
+
+.sb-wrapper h1 {
+  margin-top: 0;
+  font-size: 2.25rem !important;
+  line-height: 1.15;
+}
+
+.sb-wrapper h2 {
+  font-size: 2rem !important;
+  line-height: 1.15;
+  color: #32808d;
+}
+
+.sb-wrapper h3 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.sb-wrapper pre {
+  margin-bottom: 12px;
 }
 
 .sb-wrapper i {
@@ -32,9 +54,13 @@ Text Domain:  Avada
   background: #32808d;
   border-radius: 3px;
   padding: 10px 30px;
-  font-size: bold;
   display: inline-block;
   margin: 20px 0;
+  font-weight: 500;
+}
+
+.sb-wrapper .btn:hover {
+  background: #2b6c76;
 }
 
 .container-img {
@@ -54,38 +80,8 @@ Text Domain:  Avada
   padding: 40px 0;
 }
 
-.card {
-  padding: 20px 30px;
-  background: #F2F3F5;
-}
-
-.cards-anchor {
-  padding: 50px 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr));
-  grid-gap: 3vmin;
-  text-align: center;
-}
-
-.card-leaf {
-  padding: 30px 20px;
-  border-radius: 50px 0;
-  transition: all 0.5s ease;
-  border: 8px solid #eee;
-}
-
-.card-leaf:hover {
-  transform: scale(1.05);
-}
-
-.card-leaf p {
-  color: black;
-}
-
-.card-sub {
-  padding: 20px 30px;
-  border-left: 3px solid #32808d;
+.section-header p {
+  font-size: 1.2rem;
 }
 
 .grid-twos {
@@ -99,20 +95,151 @@ Text Domain:  Avada
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  grid-gap: 5vmin;
   position: fixed;
   bottom: 0;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  grid-gap: 5vmin;
 }
 
 .sb-nav p {
   display: none;
 }
 
-.sb-nav>div {
-  padding: 20px;
+.ranks {
+  padding: 20px 0;
+}
+
+.ranks .rank:first-child h6 {
+  background: white;
+  font-size: 160px;
+}
+
+.ranks .rank:first-child .rank-title {
+  font-size: 24px;
+  border-bottom: 20px solid #FCCC49;
+}
+
+.rank {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 100px;
+  /* align-items: flex-end; */
+}
+
+.rank-num {
+  display: grid;
+  background: #32808d;
+  font-size: 80px;
+}
+
+.rank-title {
+  display: grid;
+  /* background: #32808d; */
+  border-bottom: 5px solid #32808d;
+}
+
+.rank h6 {
+  font-size: 80px;
+  line-height: 80px;
+  margin: 0;
+  font-weight: 900;
+  justify-self: end;
+  align-self: end;
+  color: #FCCC49;
+}
+
+.rank p {
+  margin: 0;
+  justify-self: start;
+  align-self: end;
+  font-weight: bold;
+  line-height: 1.2;
+  padding-left: 5px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+}
+
+/* Cards */
+.cards {
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr));
+  grid-gap: 3vmin;
+  text-align: center;
+}
+
+.card {
+  padding: 30px;
+  background: #F2F3F5;
+}
+
+.card-leaf {
+  padding: 30px 20px;
+  border-radius: 50px 0;
+  transition: all 0.5s ease;
+  border: 8px solid #eee;
+}
+
+.card-leaf:hover {
+  transform: scale(1.05);
+}
+
+.card-leaf h3 {
+  margin-top: 20px;
+}
+
+.card-leaf p {
+  color: black;
+  font-weight: 400;
+}
+
+.card-sub {
+  padding: 20px 30px;
+  border-left: 3px solid #32808d;
+}
+
+.cards-org .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #c4e8e2;
+}
+
+.cards-org .card-org {
+  border: 2px solid #F2F3F5;
+  background: unset;
+  border-radius: 3px;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+
+.cards-org .card h4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.card-org a {
+  background: #F2F3F5;
+  border: 1px solid #eee;
+  padding: 8px 20px;
+  margin: 0 3px;
+  display: inline-block;
+}
+
+.cards-org .card small {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  font-size: 16px;
+  padding: 3px 5px;
+  background: #FCCC49;
+}
+
+.card-org>div {
+  margin-top: 20px;
 }
 
 @media (min-width: 768px) {
