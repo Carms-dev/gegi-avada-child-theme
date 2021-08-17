@@ -1,6 +1,7 @@
 # gegi.ca
 
 School Board Content Revamp
+
 [Production](https://www.gegi.ca/)
 
 ## Technology & Plugins
