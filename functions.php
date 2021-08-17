@@ -15,10 +15,9 @@ add_action( 'after_setup_theme', 'avada_lang_setup' );
 
 // Register Custom Post Type - school board
 function school_board_post_type() {
-
 	$labels = array(
-		'name'                  => _x( 'School Boards', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'School Board', 'Post Type Singular Name', 'text_domain' ),
+		'name'                  => _x( 'School Boards', 'Post Type General Name'),
+		'singular_name'         => _x( 'School Board', 'Post Type Singular Name'),
 	);
 	$args = array(
 		'labels'                => $labels,
@@ -37,8 +36,8 @@ add_action( 'init', 'school_board_post_type', 0 );
 // Register Custom Post Type - Organization
 function organization_post_type() {
 	$labels = array(
-		'name'                  => _x( 'Organizations', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'Organization', 'Post Type Singular Name', 'text_domain' ),
+		'name'                  => _x( 'Organizations', 'Post Type General Name'),
+		'singular_name'         => _x( 'Organization', 'Post Type Singular Name'),
 	);
 	$args = array(
 		'labels'                => $labels,
@@ -54,3 +53,19 @@ function organization_post_type() {
 }
 
 add_action( 'init', 'organization_post_type', 0 );
+
+// AJAX SEARCH PRO for search bar id == 2
+// Update the results URL from School Board Singles to append ?sb_id=$id
+add_filter( 'asp_results', 'asp_custom_link_results', 10, 4 );
+function asp_custom_link_results( $results, $search_id, $is_ajax, $args ) {
+  if ($search_id == 2) {
+    foreach ($results as $k=>&$r) {
+      // Ajax results link
+      if ( isset($r->link) ) {
+        $query = "?sb_id=";
+        $r->link = $query . $r->id;
+      }
+    }
+  }
+  return $results;
+}

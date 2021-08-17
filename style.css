@@ -9,9 +9,31 @@ Text Domain:  Avada
 */
 
 /* School Board Page */
+
 .sb-wrapper section {
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 100px;
+}
+
+.sb-wrapper h1 {
+  margin-top: 0;
+  font-size: 2.25rem !important;
+  line-height: 1.15;
+}
+
+.sb-wrapper h2 {
+  font-size: 2rem !important;
+  line-height: 1.15;
+  color: #32808d;
+}
+
+.sb-wrapper h3 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.sb-wrapper pre {
+  margin-bottom: 12px;
 }
 
 .sb-wrapper i {
@@ -32,21 +54,23 @@ Text Domain:  Avada
   background: #32808d;
   border-radius: 3px;
   padding: 10px 30px;
-  font-size: bold;
   display: inline-block;
   margin: 20px 0;
+  font-weight: 500;
+}
+
+.sb-wrapper .btn:hover {
+  background: #2b6c76;
 }
 
 .container-img {
   display: grid;
   grid-gap: 5vmin;
   align-items: center;
-  padding-top: 40px;
 }
 
 .grid-twos-flex {
   display: grid;
-  grid-template-columns: 1fr auto;
   grid-gap: 12px;
 }
 
@@ -54,18 +78,110 @@ Text Domain:  Avada
   padding: 40px 0;
 }
 
-.card {
-  padding: 20px 30px;
-  background: #F2F3F5;
+.section-header p {
+  font-size: 1.2rem;
 }
 
-.cards-anchor {
+.grid-twos {
+  display: grid;
+  grid-gap: 5vmin;
+  align-items: flex-start;
+}
+
+.grid-twos .section-header {
+  padding: 0;
+}
+
+.grid-twos img {
+  justify-self: center;
+}
+
+.sb-nav {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  grid-gap: 5vmin;
+  padding: 0 20px;
+}
+
+.sb-nav p {
+  display: none;
+}
+
+.ranks {
+  padding: 20px 0;
+}
+
+.ranks .rank:first-child h6 {
+  background: white;
+  font-size: 160px;
+}
+
+.ranks .rank:first-child .rank-title {
+  font-size: 24px;
+  border-bottom: 20px solid #FCCC49;
+}
+
+.rank {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 100px;
+  /* align-items: flex-end; */
+}
+
+.rank-num {
+  display: grid;
+  background: #32808d;
+  font-size: 80px;
+}
+
+.rank-title {
+  display: grid;
+  /* background: #32808d; */
+  border-bottom: 5px solid #32808d;
+}
+
+.rank h6 {
+  font-size: 80px;
+  line-height: 80px;
+  margin: 0;
+  font-weight: 900;
+  justify-self: end;
+  align-self: end;
+  color: #FCCC49;
+}
+
+.rank p {
+  margin: 0;
+  justify-self: start;
+  align-self: end;
+  font-weight: bold;
+  line-height: 1.2;
+  padding-left: 5px;
+  padding-right: 12px;
+  padding-bottom: 5px;
+}
+
+/* Cards */
+
+.cards {
   padding: 50px 0;
-  list-style: none;
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(300px, 1fr));
   grid-gap: 3vmin;
   text-align: center;
+}
+
+.card {
+  padding: 30px;
+  background: #F2F3F5;
 }
 
 .card-leaf {
@@ -79,8 +195,13 @@ Text Domain:  Avada
   transform: scale(1.05);
 }
 
+.card-leaf h3 {
+  margin-top: 20px;
+}
+
 .card-leaf p {
   color: black;
+  font-weight: 400;
 }
 
 .card-sub {
@@ -88,31 +209,52 @@ Text Domain:  Avada
   border-left: 3px solid #32808d;
 }
 
-.grid-twos {
-  display: grid;
-  grid-gap: 5vmin;
-  align-items: flex-start;
+.cards-org .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #c4e8e2;
 }
 
-.sb-nav {
-  background: #fff;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.cards-org .card-org {
+  border: 2px solid #F2F3F5;
+  background: unset;
+  border-radius: 3px;
   justify-content: space-between;
-  grid-gap: 5vmin;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.sb-nav p {
-  display: none;
+.cards-org .card h4 {
+  font-size: 2rem;
+  line-height: 1.8 margin: 0;
 }
 
-.sb-nav>div {
-  padding: 20px;
+.cards-org .card-org h4 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.card-org a {
+  background: #F2F3F5;
+  border: 1px solid #eee;
+  padding: 8px 20px;
+  margin: 0 5px 10px 0;
+  display: inline-block;
+}
+
+.cards-org .card small {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  font-size: 16px;
+  padding: 3px 5px;
+  background: #FCCC49;
+}
+
+.card-org>div {
+  margin-top: 20px;
 }
 
 @media (min-width: 768px) {
@@ -124,5 +266,18 @@ Text Domain:  Avada
   }
   .sb-nav p {
     display: block;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-twos-flex {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sb-nav {
+    left: unset;
   }
 }
