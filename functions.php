@@ -55,7 +55,7 @@ function organization_post_type() {
 add_action( 'init', 'organization_post_type', 0 );
 
 // AJAX SEARCH PRO for search bar id == 2
-// Change the results URL from School Board Singles to /talk-to-me/?sb_id=$id
+// Update the results URL from School Board Singles to append ?sb_id=$id
 add_filter( 'asp_results', 'asp_custom_link_results', 10, 4 );
 function asp_custom_link_results( $results, $search_id, $is_ajax, $args ) {
   if ($search_id == 2) {

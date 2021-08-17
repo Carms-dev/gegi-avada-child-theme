@@ -1,24 +1,23 @@
-<!-- Template Partials -->
+<!-- Template Partials used in Policy Page Template-->
 <?php if( have_rows('policies', $args['static_content'])): ?>
   <?php while( have_rows('policies', $args['static_content']) ): the_row();
     // Get sub field values.
-    $anchor = get_sub_field('anchor');
-    $header = get_sub_field('header');
-    $description = get_sub_field('description');
-    $image = get_sub_field('image');
-    $sub_header = get_sub_field('sub_header');
-    $sub_description = get_sub_field('sub_description');
-    $no_policy_header = get_sub_field('no_policy_header');
-    $no_policy_description = get_sub_field('no_policy_description');
-    $cta_header = get_sub_field('cta_header');
-    $cta_description = get_sub_field('cta_description');
-    $cta_link_text = get_sub_field('cta_link_text');
-    $cta_link = get_sub_field('cta_link');
-    $sheet_header = get_sub_field('sheet_header');
-    $sheet_description = get_sub_field('sheet_description');
-    $sheet_file = get_sub_field('sheet_file');
+    $anchor                 = get_sub_field('anchor');
+    $header                 = get_sub_field('header');
+    $description            = get_sub_field('description');
+    $image                  = get_sub_field('image');
+    $sub_header             = get_sub_field('sub_header');
+    $sub_description        = get_sub_field('sub_description');
+    $no_policy_header       = get_sub_field('no_policy_header');
+    $no_policy_description  = get_sub_field('no_policy_description');
+    $cta_header             = get_sub_field('cta_header');
+    $cta_description        = get_sub_field('cta_description');
+    $cta_link_text          = get_sub_field('cta_link_text');
+    $cta_link               = get_sub_field('cta_link');
+    $sheet_header           = get_sub_field('sheet_header');
+    $sheet_description      = get_sub_field('sheet_description');
+    $sheet_file             = get_sub_field('sheet_file');
   ?>
-
   <section id="<?php echo $anchor; ?>">
     <div class="section-header">
       <h2><?php echo $header; ?></h2>
@@ -36,40 +35,48 @@
         <?php echo $sub_description; ?>
       </div>
     </div>
-
-    <!-- Display All Policies -->
-    <?php if( have_rows('policies_student', $args['school_board']) ): ?>
-      <div class="grid-twos" style="margin: 5vmin 0">
-        <?php while( have_rows('policies_student', $args['school_board']) ): the_row();
-          $file = get_sub_field('file');
-        ?>
-          <div class="card card grid-twos-flex" >
-            <p><?php echo $file['title']; ?></p>
-            <?php if( $file ): ?>
-              <a href="<?php echo $file['url']; ?>">
-                <?php echo $args['download_icon']; ?>
-              </a>
-            <?php endif; ?>
-          </div>
-        <?php endwhile; ?>
-      </div>
-    <?php else: ?>
-      <!-- Display No policy message -->
-      <div class="section-header">
-        <h3><?php echo $no_policy_header; ?></h3>
-        <p><?php echo $no_policy_description; ?></p>
-      </div>
+    <?php if ( !is_null($args['school_board']) ): ?>
+      <!-- Display All Policies -->
+      <?php if( have_rows('policies_student', $args['school_board']) ): ?>
+        <div class="grid-twos" style="margin: 5vmin 0">
+          <?php while( have_rows('policies_student', $args['school_board']) ): the_row();
+            $file = get_sub_field('file');
+          ?>
+            <div class="card card grid-twos-flex" >
+              <p><?php echo $file['title']; ?></p>
+              <?php if( $file ): ?>
+                <a href="<?php echo $file['url']; ?>">
+                  <?php echo $args['download_icon']; ?>
+                </a>
+              <?php endif; ?>
+            </div>
+          <?php endwhile; ?>
+        </div>
+      <?php else: ?>
+        <!-- Display No policy message -->
+        <div class="section-header">
+          <h3><?php echo $no_policy_header; ?></h3>
+          <p><?php echo $no_policy_description; ?></p>
+        </div>
+      <?php endif; ?>
     <?php endif; ?>
 
+
     <!-- Displays as possible actions at the end of page -->
-    <div class="grid-twos" style="align-items: stretch;">
+    <div class="grid-twos" style="align-items: stretch; margin-top: 5vmin;">
       <!-- Call to action -->
       <div class="card">
         <h3><?php echo $cta_header; ?></h3>
         <p><?php echo $cta_description; ?></p>
-        <a class="btn" href="<?php echo esc_url( add_query_arg( 'sb_id', $args['school_board'], $cta_link ) ); ?>">
-          <?php echo $cta_link_text; ?>
-        </a>
+        <?php if ( !is_null($args['school_board']) ): ?>
+          <a class="btn" href="<?php echo esc_url( add_query_arg( 'sb_id', $args['school_board'], $cta_link ) ); ?>#contacts">
+            <?php echo $cta_link_text; ?>
+          </a>
+		<?php else: ?>
+		  <a class="btn" href="<?php echo esc_url( $cta_link ); ?>#contacts">
+            <?php echo $cta_link_text; ?>
+          </a>
+        <?php endif; ?>
       </div>
 
       <!-- Sheet Card -->

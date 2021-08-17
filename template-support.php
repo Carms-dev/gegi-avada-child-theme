@@ -17,6 +17,7 @@
   <?php get_template_part( 'includes/section', 'hero', array(
     'static_content'  => $static_content,
     'school_board'    => $school_board,
+    'asp_id'          => $asp_id,
   ) ); ?>
 
   <!-- Section 1 -->

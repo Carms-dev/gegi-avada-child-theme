@@ -1,3 +1,4 @@
+<!-- Template Partials used in Support Page Template -->
 <?php
   query_posts(array(
     'post_type' => 'organizations',

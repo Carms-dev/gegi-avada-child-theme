@@ -1,16 +1,16 @@
+<!-- Template Partials used in Policy Page Template-->
 <!-- This section is newly added. Dynamic content to be added -->
-<!-- Template Partials -->
 <?php if( have_rows('pronouns', $args['static_content'])): ?>
   <?php while( have_rows('pronouns', $args['static_content']) ): the_row();
     // Get sub field values.
-    $anchor = get_sub_field('anchor');
-    $header = get_sub_field('header');
-    $description = get_sub_field('description');
-    $image = get_sub_field('image');
-    $sub_header = get_sub_field('sub_header');
-    $sub_description = get_sub_field('sub_description');
-    $sub_link_text = get_sub_field('sub_link_text');
-    $sub_anchor = get_sub_field('sub_anchor');
+    $anchor           = get_sub_field('anchor');
+    $header           = get_sub_field('header');
+    $description      = get_sub_field('description');
+    $image            = get_sub_field('image');
+    $sub_header       = get_sub_field('sub_header');
+    $sub_description  = get_sub_field('sub_description');
+    $sub_link_text    = get_sub_field('sub_link_text');
+    $sub_anchor       = get_sub_field('sub_anchor');
   ?>
 
   <section id="<?php echo $anchor; ?>">

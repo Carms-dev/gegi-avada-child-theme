@@ -1,3 +1,4 @@
+<!-- Template Partials used in Support Page Template -->
 <?php if( have_rows('section_two', $args['static_content'])): ?>
   <?php while( have_rows('section_two', $args['static_content']) ): the_row();
     // Get sub field values.

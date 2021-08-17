@@ -11,7 +11,7 @@ Text Domain:  Avada
 /* School Board Page */
 
 .sb-wrapper section {
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 100px;
 }
 
@@ -67,12 +67,10 @@ Text Domain:  Avada
   display: grid;
   grid-gap: 5vmin;
   align-items: center;
-  padding-top: 40px;
 }
 
 .grid-twos-flex {
   display: grid;
-  grid-template-columns: 1fr auto;
   grid-gap: 12px;
 }
 
@@ -90,17 +88,27 @@ Text Domain:  Avada
   align-items: flex-start;
 }
 
+.grid-twos .section-header {
+  padding: 0;
+}
+
+.grid-twos img {
+  justify-self: center;
+}
+
 .sb-nav {
   background: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   grid-gap: 5vmin;
+  padding: 0 20px;
 }
 
 .sb-nav p {
@@ -162,6 +170,7 @@ Text Domain:  Avada
 }
 
 /* Cards */
+
 .cards {
   padding: 50px 0;
   display: grid;
@@ -217,15 +226,21 @@ Text Domain:  Avada
 }
 
 .cards-org .card h4 {
+  font-size: 2rem;
+  line-height: 1.8 margin: 0;
+}
+
+.cards-org .card-org h4 {
   font-size: 1.5rem;
-  margin: 0;
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 .card-org a {
   background: #F2F3F5;
   border: 1px solid #eee;
   padding: 8px 20px;
-  margin: 0 3px;
+  margin: 0 5px 10px 0;
   display: inline-block;
 }
 
@@ -251,5 +266,18 @@ Text Domain:  Avada
   }
   .sb-nav p {
     display: block;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-twos-flex {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sb-nav {
+    left: unset;
   }
 }

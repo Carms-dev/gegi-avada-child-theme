@@ -1,3 +1,4 @@
+<!-- Template Partials used in Support Page Template -->
 <?php
   $orgs = get_field($args['field_name'], $args['school_board']);
   if( $orgs ): ?>
