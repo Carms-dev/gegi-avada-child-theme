@@ -257,6 +257,27 @@ Text Domain:  Avada
   margin-top: 20px;
 }
 
+#btn-next {
+  float: right;
+  background: #FCCC49;
+  color: black;
+  border: 2px solid #ccc;
+}
+
+#btn-next:hover {
+  background: #ffc525;
+}
+
+#sym-quote {
+  display: none;
+}
+
+#page-policy .animated {
+  -webkit-animation: wiggle 1s ease-in-out 1;
+  -moz-animation: wiggle 1s ease-in-out 1;
+  animation: wiggle 1s ease-in-out 1;
+}
+
 @media (min-width: 768px) {
   .container-img {
     grid-template-columns: 2fr 3fr;
@@ -267,6 +288,9 @@ Text Domain:  Avada
   .sb-nav p {
     display: block;
     margin-bottom: 0;
+  }
+  #sym-quote {
+    display: inline;
   }
 }
 
@@ -279,5 +303,59 @@ Text Domain:  Avada
 @media (min-width: 1280px) {
   .sb-nav {
     left: unset;
+  }
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(20deg);
+  }
+  75% {
+    -webkit-transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes wiggle {
+  0% {
+    -ms-transform: rotate(1deg);
+  }
+  25% {
+    -ms-transform: rotate(-1deg);
+  }
+  50% {
+    -ms-transform: rotate(1.5deg);
+  }
+  75% {
+    -ms-transform: rotate(-5deg);
+  }
+  100% {
+    -ms-transform: rotate(0deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

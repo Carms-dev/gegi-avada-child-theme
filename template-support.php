@@ -17,7 +17,22 @@
   <?php get_template_part( 'includes/section', 'hero', array(
     'static_content'  => $static_content,
     'school_board'    => $school_board,
-    'asp_id'          => $asp_id,
+	  'asp_id'       	  => $asp_id,
+  ) ); ?>
+
+  <!-- Section WHY -->
+  <?php get_template_part( 'includes/section', 'why', array(
+    'static_content'  => $static_content,
+  ) ); ?>
+
+  <!-- Section WHAT -->
+  <?php get_template_part( 'includes/section', 'what', array(
+    'static_content'  => $static_content,
+  ) ); ?>
+
+  <!-- Section WHO -->
+  <?php get_template_part( 'includes/section', 'who', array(
+    'static_content'  => $static_content,
   ) ); ?>
 
   <!-- Section 1 -->
