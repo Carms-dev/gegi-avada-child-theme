@@ -14,7 +14,7 @@
 ?>
 
 <!-- Wrap the entire page to prevent style leak -->
-<div class="sb-wrapper">
+<div class="sb-wrapper" id="page-policy">
   <!-- Hero -->
   <?php get_template_part( 'includes/section', 'hero', array(
     'static_content'  => $static_content,

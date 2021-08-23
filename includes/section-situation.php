@@ -56,7 +56,7 @@
             </div>
 
             <div class="grid-twos-flex">
-              <p style="font-size: 50px; color: grey; margin-top: -20px;">❝ </p>
+              <p id="sym-quote" style="font-size: 50px; color: grey; margin-top: -20px;">❝ </p>
               <?php echo $policy_excerpt; ?>
             </div>
 

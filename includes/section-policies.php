@@ -65,22 +65,25 @@
     <!-- Displays as possible actions at the end of page -->
     <div class="grid-twos" style="align-items: stretch; margin-top: 5vmin;">
       <!-- Call to action -->
-      <div class="card">
+      <div class="card card-sub">
         <h3><?php echo $cta_header; ?></h3>
         <p><?php echo $cta_description; ?></p>
+        <!-- Director Contact info, display if any -->
         <?php if ( !is_null($args['school_board']) ): ?>
-          <a class="btn" href="<?php echo esc_url( add_query_arg( 'sb_id', $args['school_board'], $cta_link ) ); ?>#contacts">
-            <?php echo $cta_link_text; ?>
-          </a>
-		<?php else: ?>
-		  <a class="btn" href="<?php echo esc_url( $cta_link ); ?>#contacts">
-            <?php echo $cta_link_text; ?>
-          </a>
+          <?php if( have_rows('director', $args['school_board']) ): ?>
+            <?php while( have_rows('director', $args['school_board']) ): the_row();
+              $contact_name = get_sub_field('contact_name');
+              $contact_info = get_sub_field('contact_info');
+            ?>
+              <h4><?php echo $contact_name; ?></h4>
+              <?php echo $contact_info; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
         <?php endif; ?>
       </div>
 
       <!-- Sheet Card -->
-      <div class="card">
+      <div class="card card-sub">
         <h3><?php echo $sheet_header; ?></h3>
         <div class="grid-twos-flex">
           <p>
