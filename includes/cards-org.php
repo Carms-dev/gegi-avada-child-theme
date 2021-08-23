@@ -1,8 +1,9 @@
 <!-- Template Partials used in Support Page Template -->
 <?php
   query_posts(array(
-    'post_type' => 'organizations',
-    'category_name' => $args['category_name'],
+    'post_type'       => 'organizations',
+    'category_name'   => $args['category_name'],
+    'posts_per_page'  => -1,
   ) );
 ?>
 <?php if ( have_posts() ) : ?>

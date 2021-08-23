@@ -23,15 +23,19 @@
       <p><?php echo $description_next; ?></p>
 
       <?php if ( !is_null($args['school_board']) ): ?>
-        <a class="btn"
+        <a
+          id="btn-next"
+          class="btn"
           href="<?php echo esc_url( add_query_arg( 'sb_id', $args['school_board'], $page_link_next ) ); ?>"
-          style="float: right;">
+        >
           <?php echo $link_text_next; ?>
         </a>
       <?php else: ?>
-        <a class="btn"
+        <a
+          id="btn-next"
+          class="btn"
           href="<?php echo esc_url( $page_link_next ); ?>"
-          style="float: right;">
+        >
           <?php echo $link_text_next; ?>
         </a>
       <?php endif; ?>

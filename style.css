@@ -12,19 +12,20 @@ Text Domain:  Avada
 
 .sb-wrapper section {
   padding-top: 30px;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
 
 .sb-wrapper h1 {
   margin-top: 0;
-  font-size: 2.25rem !important;
+  font-size: 2.5rem !important;
   line-height: 1.15;
 }
 
 .sb-wrapper h2 {
-  font-size: 2rem !important;
+  font-size: 2.25rem !important;
   line-height: 1.15;
   color: #32808d;
+  margin-top: 0 !important;
 }
 
 .sb-wrapper h3 {
@@ -75,11 +76,14 @@ Text Domain:  Avada
 }
 
 .section-header {
-  padding: 40px 0;
+  padding-bottom: 70px;
 }
 
 .section-header p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0;
 }
 
 .grid-twos {
@@ -89,7 +93,8 @@ Text Domain:  Avada
 }
 
 .grid-twos .section-header {
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 20px;
 }
 
 .grid-twos img {
@@ -257,6 +262,27 @@ Text Domain:  Avada
   margin-top: 20px;
 }
 
+#btn-next {
+  float: right;
+  background: #FCCC49;
+  color: black;
+  border: 2px solid #ccc;
+}
+
+#btn-next:hover {
+  background: #ffc525;
+}
+
+#sym-quote {
+  display: none;
+}
+
+#page-policy .animated {
+  -webkit-animation: wiggle 1s ease-in-out 1;
+  -moz-animation: wiggle 1s ease-in-out 1;
+  animation: wiggle 1s ease-in-out 1;
+}
+
 @media (min-width: 768px) {
   .container-img {
     grid-template-columns: 2fr 3fr;
@@ -267,6 +293,9 @@ Text Domain:  Avada
   .sb-nav p {
     display: block;
     margin-bottom: 0;
+  }
+  #sym-quote {
+    display: inline;
   }
 }
 
@@ -279,5 +308,59 @@ Text Domain:  Avada
 @media (min-width: 1280px) {
   .sb-nav {
     left: unset;
+  }
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotate(10deg);
+  }
+  25% {
+    -webkit-transform: rotate(-10deg);
+  }
+  50% {
+    -webkit-transform: rotate(20deg);
+  }
+  75% {
+    -webkit-transform: rotate(-5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes wiggle {
+  0% {
+    -ms-transform: rotate(1deg);
+  }
+  25% {
+    -ms-transform: rotate(-1deg);
+  }
+  50% {
+    -ms-transform: rotate(1.5deg);
+  }
+  75% {
+    -ms-transform: rotate(-5deg);
+  }
+  100% {
+    -ms-transform: rotate(0deg);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
